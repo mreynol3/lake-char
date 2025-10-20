@@ -9,10 +9,11 @@ library(arrow)
 library(StreamCatTools)
 
 toc <- read_parquet('toc.parquet')
+
 path <- 'ndvi.nc'
 ndvi <- nc_open(path)
-ndvi <- ncvar_get(ndvi, varid = 'NDVI')
 
+RNetCDF::print.ncdf4(ndvi)
 
 
 
